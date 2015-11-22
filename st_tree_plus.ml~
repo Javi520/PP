@@ -1,8 +1,0 @@
-let is_single arbol = 
-    try let _ = ramas arbol in false 
-    with Ramas ­> true;;
-let izq arbol = 
-	if is_single arbol then raise(Failure "Arbol vacio")
-	else 
-		match arbol with
-		(_,i,d) -> i;;

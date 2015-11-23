@@ -93,6 +93,18 @@ let is_mirrored arbol1 arbol2 =
               ((auxiliar i1 d2)&&(auxiliar i2 d1))
     in auxiliar arbol1 arbol2;;
 
+let treemap arbol funy a b=
+  if is_single arbol then raise(Failure "caca")
+  else
+  let auxiliar2 a b =
+    (funy a b) in
+    let rec auxiliar arbol =
+      match ramas arbol with
+        (i,d) -> auxiliar2 a b; auxiliar i; auxiliar d
+    in auxiliar arbol;;
+
+let funcionita a b =
+    a+b;;
 let crono f x =
    let t = Sys.time () in
       let _ = f x in
